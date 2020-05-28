@@ -13,7 +13,7 @@ export class Project extends React.Component {
         }
 
     componentDidMount() {
-        let api_url = new ApiHelper('https://api.github.com/users/yohochen').append('/repos').param('type=all').getFinalURL()
+        let api_url = new ApiHelper('https://api.fffb.com/users/yohochen').append('/repos').param('type=all').getFinalURL()
         let preset = ['ParkingMaps', 'Skeye', 'Vision-Shopping', 'Foodpertino', 'Portfolio', 'Stock-platform']
         fetch(api_url)
           .then(res => res.json())
@@ -40,7 +40,17 @@ export class Project extends React.Component {
         const {projects, isLoaded, error} = this.state
 
         if (error){
-            return <div>Error: {error.message}</div>;
+            return (
+                <section className="section-projects">
+                    <div className="row">
+                      <h2>Projects</h2>
+                    </div>
+                    <div className="row">
+                        <div className='error'> Error: {error.message} :(</div>
+                    </div>
+
+                </section>
+            )
         } else if (!isLoaded) {
           return <div></div>; // loading
         } else {
@@ -59,9 +69,10 @@ export class Project extends React.Component {
                                  <ProjectItem
                                     key={project.name}
                                     projectName={project.name}
+                                    repo={project.html_url}
                                     description={project.description !== null ? project.description : descriptionMap[project.name]}
                                     languagesURL={project.languages_url}/>
-                             )}
+                              )}
                             )}
                         </div>
                     </div>

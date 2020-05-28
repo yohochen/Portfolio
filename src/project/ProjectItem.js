@@ -55,14 +55,13 @@ export class ProjectItem extends React.Component {
     }
 
     render() {
-      const { projectName, description } = this.props;
+      const { projectName, description, repo } = this.props;
       return (
-            <div className="project" >
+            <div className="project" onClick={() => window.open(repo)}>
                 <h3>{projectName}</h3>
                 <div className="divided"></div>
                 <p>
                     {this.state.languagesPercentage}
-
                 </p>
                 <div className="divided"></div>
                 <p>

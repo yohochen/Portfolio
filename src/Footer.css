@@ -1,0 +1,67 @@
+/* https://www.bootstrapcdn.com/fontawesome/
+http://fontawesome.io/icons/ */
+
+footer{
+  background-color: #333;
+  padding: 35px 100px;
+  font-size: 60%;
+}
+
+.footer-nav {
+  display: inline-block;
+  float: left;
+  list-style: none;
+}
+
+.social-links {
+  float: right;
+  list-style: none;
+}
+
+.footer-nav li,
+.social-links li{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-nav li: last-child,
+.social-links li: last-child{
+  margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited{
+  text-decoration: none;
+  border: 0;
+  color: #e1e1e1;
+  transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active,
+.social-links li a:hover,
+.social-links li a:active{
+  color: #808080;
+}
+
+.social-links li a:link,
+.social-links li a:visited{
+  font-size: 200%;
+}
+
+.fa-linkedin:hover{
+  color:#0077b5;
+}
+.fa-github-square:hover{
+  color:#f14e32;
+}
+
+
+
+footer p{
+  color: #e1e1e1;
+  text-align: center;
+  font-size: 100%;
+}
