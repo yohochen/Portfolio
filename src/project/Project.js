@@ -13,7 +13,7 @@ export class Project extends React.Component {
         }
 
     componentDidMount() {
-        let api_url = new ApiHelper('https://api.facebook.com/users/yohochen').append('/repos').param('type=all').getFinalURL()
+        let api_url = new ApiHelper('https://api.github.com/users/yohochen').append('/repos').param('type=all').getFinalURL()
         let preset = ['ParkingMaps', 'Skeye', 'Vision-Shopping', 'Foodpertino', 'Portfolio', 'Stock-platform']
         fetch(api_url)
           .then(res => res.json())
@@ -72,11 +72,10 @@ export class Project extends React.Component {
     }
 }
 
-// const descriptionMap= {
 const descriptionMap = {
     'ParkingMaps': 'IOS project integrated with Firebase to display the nearby campus parking',
-    'Skeye': 'Social event management that provides convenience to event host, third party, and visitor',
-    'Vision-Shopping': 'E-commerce website for user to search product by taking a photo. Integrated IBM Wastson for Visual recoginition',
+    'Skeye': 'Event management app that provides convenience to event host, third party, and visitor',
+    'Vision-Shopping': 'E-commerce site to commodity product by photo. Uses IBM Wastson Visual recoginition',
     'Foodpertino': 'Simple html5/css3 frontend project',
     'Portfolio': 'Personal portfolio',
     'Stock-platform': 'Informative Stock Platform built with React/Nodejs'}
