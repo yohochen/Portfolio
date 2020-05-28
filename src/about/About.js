@@ -5,7 +5,7 @@ function About() {
         <div className="about">
             <h1>I'm Yoho.
                 <br />
-                I'm a software engineer and passionate about tech in Cloud and Web.
+                I'm a software engineer and passionate about Cloud and Web.
             </h1>
         </div>
     )

@@ -1,5 +1,11 @@
 import React from 'react';
 
+const langData = {
+  "PHP": 93147,
+  "JavaScript": 28448,
+  "HTML": 27542,
+  "CSS": 4871
+}
 
 export class ProjectItem extends React.Component {
 
@@ -8,7 +14,8 @@ export class ProjectItem extends React.Component {
           this.state = {
             error: null,
             isLoaded: false,
-            languages: null
+            languages: null,
+            languagesPercentage: ''
           };
         }
 
@@ -20,7 +27,7 @@ export class ProjectItem extends React.Component {
               this.setState({
                 languages: result,
                 isLoaded: true
-              });
+              })
             },
 
             (error) => {
@@ -29,32 +36,33 @@ export class ProjectItem extends React.Component {
                 error
               });
             }
-          )
+        ).then(res => {this.getLanguages(res)})
     }
 
-    getLanguages(languages_url) {
-        // const languages =
-        //     fetch(languages_url)
-        //     .then(res => res.json())
-        //     .catch(function(error) {
-        //         console.log('There has been a problem with languages detail fetch: ',
-        //         error.message);
-        //     });
-        //
-        // console.log("show:")
-        // console.log(languages)
-        const total = 0;
+    getLanguages(languagesObj) {
+        if(this.state.languages){
+
+            const reducerSum = (sum, lang) =>  sum + lang
+            const total = Object.values(this.state.languages).reduce(reducerSum, 0);
+
+            const reducerSummary = (summary, lang) => {
+                summary += '  ' + lang[0] + ': ' + (lang[1] / total * 100).toFixed(1) + '%'
+                return summary
+            }
+            const detail = Object.entries(this.state.languages).reduce(reducerSummary, '');
+            this.setState({languagesPercentage: detail})
+        }
     }
 
     render() {
-      const { projectName, description } = this.props; // ES6 destructuring
-
+      const { projectName, description } = this.props;
       return (
             <div className="project" >
                 <h3>{projectName}</h3>
                 <div className="divided"></div>
                 <p>
-                    {JSON.stringify(this.state.languages)}
+                    {this.state.languagesPercentage}
+
                 </p>
                 <div className="divided"></div>
                 <p>
@@ -62,8 +70,8 @@ export class ProjectItem extends React.Component {
                 </p>
 
             </div>
-      );
-    }
-  }
+          );
+        }
+      }
 
   export default ProjectItem

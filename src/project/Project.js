@@ -13,7 +13,7 @@ export class Project extends React.Component {
         }
 
     componentDidMount() {
-        let api_url = new ApiHelper('https://api.github.com/users/yohochen').append('/repos').param('type=all').getFinalURL()
+        let api_url = new ApiHelper('https://api.facebook.com/users/yohochen').append('/repos').param('type=all').getFinalURL()
         let preset = ['ParkingMaps', 'Skeye', 'Vision-Shopping', 'Foodpertino', 'Portfolio', 'Stock-platform']
         fetch(api_url)
           .then(res => res.json())
@@ -42,7 +42,7 @@ export class Project extends React.Component {
         if (error){
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
-          return <div>Loading...</div>;
+          return <div></div>; // loading
         } else {
             return(
                 <section className="section-projects">
@@ -53,10 +53,15 @@ export class Project extends React.Component {
                     <div className="row">
                         <div className="projects-wrapper box">
                             {projects.map(
-                                project => (
+                                project => {
 
-                                 <ProjectItem key={project.name} projectName={project.name} description={project.description} languagesURL={project.languages_url}/>
-                                )
+                                return (
+                                 <ProjectItem
+                                    key={project.name}
+                                    projectName={project.name}
+                                    description={project.description !== null ? project.description : descriptionMap[project.name]}
+                                    languagesURL={project.languages_url}/>
+                             )}
                             )}
                         </div>
                     </div>
@@ -66,4 +71,14 @@ export class Project extends React.Component {
         }
     }
 }
+
+// const descriptionMap= {
+const descriptionMap = {
+    'ParkingMaps': 'IOS project integrated with Firebase to display the nearby campus parking',
+    'Skeye': 'Social event management that provides convenience to event host, third party, and visitor',
+    'Vision-Shopping': 'E-commerce website for user to search product by taking a photo. Integrated IBM Wastson for Visual recoginition',
+    'Foodpertino': 'Simple html5/css3 frontend project',
+    'Portfolio': 'Personal portfolio',
+    'Stock-platform': 'Informative Stock Platform built with React/Nodejs'}
+
 export default Project;
