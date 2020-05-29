@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+header{
+  background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(./assets/ferry.jpg);
+  background-size: cover;
+  background-position: center;
+  height:100vh;
+  background-attachment: fixed;
+}

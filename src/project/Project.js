@@ -13,7 +13,7 @@ export class Project extends React.Component {
         }
 
     componentDidMount() {
-        let api_url = new ApiHelper('https://api.fffb.com/users/yohochen').append('/repos').param('type=all').getFinalURL()
+        let api_url = new ApiHelper('https://api.github.com/users/yohochen').append('/repos').param('type=all').getFinalURL()
         let preset = ['ParkingMaps', 'Skeye', 'Vision-Shopping', 'Foodpertino', 'Portfolio', 'Stock-platform']
         fetch(api_url)
           .then(res => res.json())

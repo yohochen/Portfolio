@@ -23,7 +23,7 @@ section{
 }
 
 .row{
-  /* max-width: 1140px; */
+  max-width: 1140px;
   /* make it always center */
   margin: 0 auto;
 }
@@ -71,4 +71,19 @@ section{
     height: 2px;
     margin: 5px 0 10px 0;
     width: 100%;
+}
+
+@font-face {
+    font-family: 'BioRhyme-ExtraLight';
+    src: url('./vendor/font/BioRhyme-ExtraLight.ttf');
+}
+
+@font-face {
+    font-family: 'BioRhyme-Light';
+    src: url('./vendor/font/BioRhyme-Light.ttf');
+}
+
+@font-face {
+    font-family: 'BioRhyme-Regular';
+    src: url('./vendor/font/BioRhyme-Regular.ttf');
 }

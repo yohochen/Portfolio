@@ -1,4 +1,5 @@
 import React from 'react';
+import './About.css'
 
 function About() {
     return (
@@ -6,7 +7,9 @@ function About() {
             <div className="about">
                 <h1>I'm Yoho.
                     <br />
-                    I'm a software engineer and passionate about Cloud and Web.
+                    I'm a software engineer.
+                    <br />
+                    I'm passionate about Cloud and Web.
                 </h1>
             </div>
         </section>

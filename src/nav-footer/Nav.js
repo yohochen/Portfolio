@@ -1,9 +1,9 @@
 import React from 'react';
+import './Nav.css'
 
 export class Nav extends React.Component {
     render(){
         return(
-            <header>
               <nav>
                 <div className="row">
                   <ul className="main-nav">
@@ -14,7 +14,6 @@ export class Nav extends React.Component {
                   </ul>
                 </div>
               </nav>
-            </header>
         )
     }
 }
