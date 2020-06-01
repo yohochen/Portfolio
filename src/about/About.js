@@ -9,7 +9,7 @@ function About() {
                     <br />
                     I'm a software engineer.
                     <br />
-                    I'm passionate about Cloud and Web.
+                    I'm passionate about Web and Cloud.
                 </h1>
             </div>
         </section>

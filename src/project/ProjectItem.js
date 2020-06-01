@@ -1,11 +1,6 @@
 import React from 'react';
-
-const langData = {
-  "PHP": 93147,
-  "JavaScript": 28448,
-  "HTML": 27542,
-  "CSS": 4871
-}
+import './Project.css'
+import http_option_with_header from '../HttpOption.js'
 
 export class ProjectItem extends React.Component {
 
@@ -20,7 +15,15 @@ export class ProjectItem extends React.Component {
         }
 
     componentDidMount() {
-        fetch(this.props.languagesURL)
+
+        const header_github_pat = {
+            'Authorization': 'token d38be962be8a4d2f1d30bc2f9e966a0cecbc1115'
+        }
+        const option = {
+            headers: header_github_pat
+        }
+
+        fetch(this.props.languagesURL, http_option_with_header)
           .then(res => res.json())
           .then(
             (result) => {

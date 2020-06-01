@@ -1,6 +1,8 @@
 import React from 'react';
 import ProjectItem from './ProjectItem';
 import ApiHelper from './ApiHelper';
+import './Project.css'
+import http_option_with_header from '../HttpOption.js'
 
 export class Project extends React.Component {
     constructor(props) {
@@ -15,7 +17,8 @@ export class Project extends React.Component {
     componentDidMount() {
         let api_url = new ApiHelper('https://api.github.com/users/yohochen').append('/repos').param('type=all').getFinalURL()
         let preset = ['ParkingMaps', 'Skeye', 'Vision-Shopping', 'Foodpertino', 'Portfolio', 'Stock-platform']
-        fetch(api_url)
+
+        fetch(api_url, http_option_with_header)
           .then(res => res.json())
           .then(
             (result) => {
@@ -43,7 +46,7 @@ export class Project extends React.Component {
             return (
                 <section className="section-projects">
                     <div className="row">
-                      <h2>Projects</h2>
+                      <h1>Projects</h1>
                     </div>
                     <div className="row">
                         <div className='error'> Error: {error.message} :(</div>
@@ -56,7 +59,7 @@ export class Project extends React.Component {
         } else {
             return(
                 <section className="section-projects">
-                    <div className="row">
+                    <div className="row projectTitle">
                       <h2>Projects</h2>
                     </div>
 

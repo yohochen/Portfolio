@@ -17,7 +17,7 @@ function App() {
         <Project />
         <Timeline />
         <Footer />
-    </div>        
+    </div>
   );
 }
 

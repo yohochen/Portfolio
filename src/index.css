@@ -28,50 +28,6 @@ section{
   margin: 0 auto;
 }
 
-.section-projects{
-    /* left:25%;
-    width:50%;
-    position:absolute;
-    text-align:center; */
-    background-color: #beeeff;
-	position: relative;
-	margin: 0 auto;
-	width: calc(100% - 4rem);
-	max-width: 72rem;
-	z-index: 2;
-}
-
-.projects-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-  background-color: #fff;
-  color: #333;
-  width: 50%;
-  margin: 0 auto;
-  grid-auto-rows: 1fr
-}
-
-.project {
-  min-width: 0;
-  background-color: #111;
-  opacity: 20%;
-  color: #fff;
-  border-radius: 5px;
-  /* box-sizing: border-box; */
-  /* font-size: 120%; */
-  word-wrap:break-word;
-  padding: 4px
-}
-
-.divided {
-  /* border-style: solid; */
-
-    background: #ff87BC;
-    height: 2px;
-    margin: 5px 0 10px 0;
-    width: 100%;
-}
 
 @font-face {
     font-family: 'BioRhyme-ExtraLight';
