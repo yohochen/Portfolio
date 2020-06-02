@@ -9,7 +9,7 @@ export class Nav extends React.Component {
                   <ul className="main-nav">
                     <li><a href="#">About</a></li>
                     <li><a href="#">Projects</a></li>
-                    <li><a href="#">Experience</a></li>
+                    <li><a href="#">Timeline</a></li>
                     <li><a href="#">Contact</a></li>
                   </ul>
                 </div>

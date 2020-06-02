@@ -45,8 +45,8 @@ export class Project extends React.Component {
         if (error){
             return (
                 <section className="section-projects">
-                    <div className="row">
-                      <h1>Projects</h1>
+                    <div className="row projectTitle">
+                      <h2>Projects</h2>
                     </div>
                     <div className="row">
                         <div className='error'> Error: {error.message} :(</div>

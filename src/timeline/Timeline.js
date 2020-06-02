@@ -4,6 +4,9 @@ import './Timeline.css'
 function Timeline() {
     return (
         <section className="section-timeline">
+            <div className="row timelineTitle">
+              <h2>Timeline</h2>
+            </div>
             <div id="cd-timeline" className="cd-container">
 
         		<div className="cd-timeline-block">
@@ -22,13 +25,13 @@ function Timeline() {
         			</div>
 
         			<div className="cd-timeline-content">
-        				<h2>Bachelor Software Engineer - SJSU </h2>
+        				<h2>Software Engineering BS - SJSU </h2>
         				<p>Bachelor degree of Software Engineer @ San Jose State Univeristy</p>
         				<span className="cd-date">2014-2017</span>
         			</div>
         		</div>
     	    </div>
-        </section>    
+        </section>
     )
 }
 
