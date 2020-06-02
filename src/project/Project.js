@@ -89,7 +89,7 @@ export class Project extends React.Component {
 const descriptionMap = {
     'ParkingMaps': 'IOS project integrated with Firebase to display the nearby campus parking',
     'Skeye': 'Event management app that provides convenience to event host, third party, and visitor',
-    'Vision-Shopping': 'E-commerce site to commodity product by photo. Uses IBM Wastson Visual recoginition',
+    'Vision-Shopping': 'E-commerce app to search similar commodity by photo. Uses IBM Wastson Visual recoginition',
     'Foodpertino': 'Simple html5/css3 frontend project',
     'Portfolio': 'Personal portfolio',
     'Stock-platform': 'Informative Stock Platform built with React/Nodejs'}

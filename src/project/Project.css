@@ -4,7 +4,7 @@
     width:50%;
     position:absolute;
     text-align:center; */
-    /* background-color: #beeeff; */
+    /* background-color: #f2f4f8; */
 	position: relative;
 	margin: 0 auto;
 	width: calc(100% - 4rem);
@@ -16,7 +16,11 @@
 
 .projectTitle > h2 {
     font-family: 'BioRhyme-ExtraLight';
-    /* font-weight: 100; */
+    font-size: 200%;
+    font-weight: 100;
+}
+
+.project > h3 {
     font-family: 'BioRhyme-ExtraLight';
     font-size: 200%;
     font-weight: 100;
@@ -33,42 +37,48 @@
 .projects-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-gap: 30px;
   background-color: #fff;
+
   color: #333;
   width: 50%;
   margin: 0 auto;
-
-  grid-auto-rows: 1fr
-
+  grid-auto-rows: 1fr;
+  text-align: center;
+  /* todo: center projects with min-width, and 1 row and shrink */
 }
 
 .project {
+  min-width: 20; /* todo: center projects with min-width, and 1 row and shrink */
+  background-color: #D1EEFF;
+  opacity: 80%;
+  color: #000;
+  border-radius: 50px;
 
-  min-width: 0;
-  background-color: #111;
-  opacity: 20%;
-  color: #fff;
-  border-radius: 5px;
-
-  /* font-size: 120%; */
   word-wrap:break-word;
-  padding: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
 
-  box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+  transition: all 0.3s ease-out;
+  background: linear-gradient(-45deg, rgba(0,0,0,0.1), rgba(255,255,255,0.25));
+  box-shadow: 0px 15px 26px 0 rgba(0, 0, 0, 0.35)
+
+
 }
 
 .project:hover
 {
-
-  color: #444;
+    transform: translateY(-10px) scale(1.015) translateZ(190px);
+    box-shadow: 0px 25px 35px rgba(0,0,0,0.15), 0 24px 36px rgba(0,0,0,0.11);
 }
 
-.divided {
-  /* border-style: solid; */
+.project:active {
+  transform: scale(1) translateZ(0);
+  box-shadow: 0px 15px 26px rgba(0,0,0,0.11),
+}
 
-    background: #ff87BC;
-    height: 2px;
-    margin: 5px 0 10px 0;
-    width: 100%;
+.divider {
+    height: 1px;
+    border-top: 1px solid #bbb;
 }

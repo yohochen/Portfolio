@@ -62,11 +62,11 @@ export class ProjectItem extends React.Component {
       return (
             <div className="project" onClick={() => window.open(repo)}>
                 <h3>{projectName}</h3>
-                <div className="divided"></div>
+                <div className="divider"></div>
                 <p>
                     {this.state.languagesPercentage}
                 </p>
-                <div className="divided"></div>
+                <div className="divider"></div>
                 <p>
                     {description}
                 </p>

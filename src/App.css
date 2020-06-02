@@ -38,7 +38,9 @@
 }
 
 header{
-  background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(./assets/ferry.jpg);
+  background-image: linear-gradient(rgba(255,255,255,0.5),rgba(0, 0, 0, 0)), url(./assets/ferry.jpg);
+/* rgba(255,255,255,0) */
+  /* background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(./assets/ferry.jpg); */
   background-size: cover;
   background-position: center;
   height:100vh;
