@@ -1,0 +1,24 @@
+.section-contact {
+
+}
+
+.ContactTitle > h2 {
+    font-family: 'BioRhyme-ExtraLight';
+    font-size: 220%;
+    font-weight: 100;
+}
+
+.ContactContent > p {
+    font-family: 'BioRhyme-Light';
+    font-size: 100%;
+    font-weight: 500;
+}
+
+.ContactContent{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
