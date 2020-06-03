@@ -44,7 +44,7 @@ export class Project extends React.Component {
 
         if (error){
             return (
-                <section className="section-projects">
+                <section id="projects" className="section-projects">
                     <div className="row projectTitle">
                       <h2>Projects</h2>
                     </div>
@@ -58,7 +58,7 @@ export class Project extends React.Component {
           return <div></div>; // loading
         } else {
             return(
-                <section className="section-projects">
+                <section id="projects" className="section-projects">
                     <div className="row projectTitle">
                       <h2>Projects</h2>
                     </div>

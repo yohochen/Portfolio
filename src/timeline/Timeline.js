@@ -3,7 +3,7 @@ import './Timeline.css'
 
 function Timeline() {
     return (
-        <section className="section-timeline">
+        <section id="timeline" className="section-timeline">
             <div className="row timelineTitle">
               <h2>Timeline</h2>
             </div>

@@ -4,8 +4,7 @@ import './Contact.css'
 export class Contact extends React.Component {
     render(){
         return(
-              <section className="section-contact">
-
+              <section id="contact" className="section-contact">
                     <div className="row ContactTitle">
                         <h2>LOOKING FORWARD TO HEARING FROM YOU</h2>
                     </div>
