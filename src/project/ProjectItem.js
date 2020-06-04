@@ -19,7 +19,7 @@ export class ProjectItem extends React.Component {
 
         fetch(this.props.languagesURL, http_option_with_header)
           .then(res => {
-              if(res.status == 401){
+              if(res.status === 401){
                 throw new Error("Bad Credential when calling github api")
               }else{
                return res.json()}

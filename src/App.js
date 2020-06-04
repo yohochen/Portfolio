@@ -5,7 +5,6 @@ import Project from './project/Project';
 import Timeline from './timeline/Timeline';
 import Contact from './contact/Contact';
 import Footer from './nav-footer/Footer';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
