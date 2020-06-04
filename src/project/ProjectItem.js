@@ -10,21 +10,20 @@ export class ProjectItem extends React.Component {
             error: null,
             isLoaded: false,
             languages: null,
-            languagesPercentage: ''
+            languagesPercentage: '',
+            display: true
           };
         }
 
     componentDidMount() {
 
-        const header_github_pat = {
-            'Authorization': 'token d38be962be8a4d2f1d30bc2f9e966a0cecbc1115'
-        }
-        const option = {
-            headers: header_github_pat
-        }
-
         fetch(this.props.languagesURL, http_option_with_header)
-          .then(res => res.json())
+          .then(res => {
+              if(res.status == 401){
+                throw new Error("Bad Credential when calling github api")
+              }else{
+               return res.json()}
+           })
           .then(
             (result) => {
               this.setState({
@@ -33,13 +32,27 @@ export class ProjectItem extends React.Component {
               })
             },
 
-            (error) => {
-              this.setState({
-                isLoaded: true,
-                error
-              });
-            }
-        ).then(res => {this.getLanguages(res)})
+            // Note: important to handle errors here
+            // instead of a catch() block so that we don't swallow
+            // exceptions from actual bugs in components.
+
+            // this "failure" callback in the promise is an invisible try/catch that
+            // handle error, so that it does not get passed to catch
+
+            // (error) => {
+            //     console.log("calling error")
+            //   this.setState({
+            //     isLoaded: true,
+            //     error
+            //   });
+            // }
+        )
+        .then(res => this.getLanguages(res))
+        .catch((err) => {
+            this.setState({
+              display: false
+            })
+        })
     }
 
     getLanguages(languagesObj) {
@@ -63,10 +76,14 @@ export class ProjectItem extends React.Component {
             <div className="project" onClick={() => window.open(repo)}>
                 <h3>{projectName}</h3>
                 <div className="divider"></div>
-                <p>
-                    {this.state.languagesPercentage}
-                </p>
-                <div className="divider"></div>
+                {this.state.display &&
+                    <React.Fragment>
+                        <p>
+                            {this.state.languagesPercentage}
+                        </p>
+                        <div className="divider"></div>
+                    </React.Fragment>
+                }
                 <p>
                     {description}
                 </p>

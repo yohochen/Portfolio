@@ -2,6 +2,7 @@ import React from 'react';
 import ProjectItem from './ProjectItem';
 import ApiHelper from './ApiHelper';
 import './Project.css'
+import BadCredError from './BadCredError.js'
 import http_option_with_header from '../HttpOption.js'
 
 export class Project extends React.Component {
@@ -19,25 +20,51 @@ export class Project extends React.Component {
         let preset = ['ParkingMaps', 'Skeye', 'Vision-Shopping', 'Foodpertino', 'Portfolio', 'Stock-platform']
 
         fetch(api_url, http_option_with_header)
-          .then(res => res.json())
-          .then(
-            (result) => {
-              this.setState({
-                projects: result.filter(project => preset.includes(project.name)),
-                isLoaded: true
-              });
-            },
-            // Note: important to handle errors here
-            // instead of a catch() block so that we don't swallow
-            // exceptions from actual bugs in components.
-            (error) => {
-              this.setState({
-                isLoaded: true,
-                error
-              });
+          .then(res => {
+            if(res.status === 200){
+                return res.json()
+            }else{
+                throw new BadCredError('Failed to fetch Github API with given credential')
             }
+          })
+          .then(
+            (result) => this.renderProjectItems(result, preset)
           )
+          .catch((err) => {
+              if(err instanceof BadCredError){
+                  // fallback: re-call it without PAT
+                  this.fetchWithoutPAT(api_url, preset)
+              }
+          })
       }
+
+    fetchWithoutPAT(api_url, preset) {
+      fetch(api_url)
+        .then((res) => {
+          if(res.status === 200){
+              return res.json()
+          }else{
+              throw new Error("Calling Github API with no Cred also failed")
+          }
+        })
+        .then(
+          (result) => {
+            this.renderProjectItems(result, preset)}
+        )
+        .catch((err) => {
+            this.setState({
+              isLoaded: true,
+              error: 'Failed to fetch from Github API'
+            });
+        })
+    }
+
+    renderProjectItems(result, preset){
+      this.setState({
+        projects: result.filter(project => preset.includes(project.name)),
+        isLoaded: true
+      });
+    }
 
     render(){
         const {projects, isLoaded, error} = this.state
@@ -49,7 +76,7 @@ export class Project extends React.Component {
                       <h2>Projects</h2>
                     </div>
                     <div className="row">
-                        <div className='error'> Error: {error.message} :(</div>
+                        <div className='error'> Error: {error} :(</div>
                     </div>
 
                 </section>

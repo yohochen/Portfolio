@@ -1,0 +1,4 @@
+- Sticky nav
+- responsive
+- center proj
+- contact form
