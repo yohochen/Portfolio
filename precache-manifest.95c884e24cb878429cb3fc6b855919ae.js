@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f4fd8e7b6017d16bc41ccafc7490926f",
+    "revision": "534aecf649fc0b03bef2a746600f3760",
     "url": "/Portfolio/index.html"
   },
   {
-    "revision": "e168a988b4db375c93db",
-    "url": "/Portfolio/static/css/main.10ef5303.chunk.css"
+    "revision": "c13441b812f37d718079",
+    "url": "/Portfolio/static/css/main.ec6edf7b.chunk.css"
   },
   {
     "revision": "7d7e7905746b4cf2e3e0",
@@ -16,12 +16,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Portfolio/static/js/2.7b6ab02e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e168a988b4db375c93db",
+    "revision": "c13441b812f37d718079",
     "url": "/Portfolio/static/js/main.9bd84646.chunk.js"
   },
   {
     "revision": "425e952245b014fc3ffb",
     "url": "/Portfolio/static/js/runtime-main.db605a1d.js"
+  },
+  {
+    "revision": "9e90fb7dadf795ea61707a6d2047a193",
+    "url": "/Portfolio/static/media/BioRhyme-ExtraLight.9e90fb7d.ttf"
+  },
+  {
+    "revision": "850b67c77a23ce5315075b15ad3f8e17",
+    "url": "/Portfolio/static/media/BioRhyme-Light.850b67c7.ttf"
+  },
+  {
+    "revision": "0b8b2846796832855de615559ba02e57",
+    "url": "/Portfolio/static/media/BioRhyme-Regular.0b8b2846.ttf"
   },
   {
     "revision": "14cabc456ecefb29b9d3ab18ac836ae5",
