@@ -9,7 +9,6 @@
 	margin: 0 auto;
 	width: calc(100% - 4rem);
 	max-width: 72rem;
-	z-index: 2;
 }
 
 
@@ -51,7 +50,7 @@
 .project {
   min-width: 20; /* todo: center projects with min-width, and 1 row and shrink */
   background-color: #D1EEFF;
-  opacity: 80%;
+  filter: opacity(90%);
   color: #000;
   border-radius: 25px;
 
