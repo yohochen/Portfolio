@@ -1,9 +1,14 @@
 
 .main-nav{
   font-family: 'BioRhyme-Light';
-  margin-top: 55px;
+  margin-top: 40px;
   float:right;
   list-style:none;
+  margin-right: 40px;
+  right: 0;
+  position: fixed;
+  z-index: 10;
+  transition: top 0.5s;
 }
 
 .main-nav li{
