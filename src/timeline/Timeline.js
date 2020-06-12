@@ -9,6 +9,17 @@ function Timeline() {
             </div>
             <div id="cd-timeline" className="cd-container">
 
+                <div className="cd-timeline-block">
+                    <div className="cd-timeline-img cd-picture">
+                    </div>
+
+                    <div className="cd-timeline-content">
+                        <h2>Software Engineering MS - SJSU </h2>
+                        <p>Striving to broaden my knowledge on data science and enterprise software system @ San Jose State Univeristy</p>
+                        <span className="cd-date">2020-Present</span>
+                    </div>
+                </div>
+
         		<div className="cd-timeline-block">
         			<div className="cd-timeline-img cd-movie">
         			</div>
