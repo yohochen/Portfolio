@@ -17,7 +17,7 @@ export class Project extends React.Component {
 
     componentDidMount() {
         let api_url = new ApiHelper('https://api.github.com/users/yohochen').append('/repos').param('type=all').getFinalURL()
-        let preset = ['ParkingMaps', 'Skeye', 'Vision-Shopping', 'Foodpertino', 'Portfolio', 'Stock-platform', 'Lighting']
+        let preset = ['py-scraping', 'Skeye', 'Vision-Shopping', 'Foodpertino', 'Portfolio', 'Stock-platform', 'Lighting']
 
         fetch(api_url, http_option_with_header)
           .then(res => {
